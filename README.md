@@ -1,3 +1,5 @@
+To create a Neo4j docker container run the command below:
+
 ```shell script
 docker run \
     --name neo4j \
@@ -10,3 +12,9 @@ docker run \
     --env NEO4J_AUTH=neo4j/test \
     -e NEO4JLABS_PLUGINS=\[\"apoc\"\] neo4j:latest
 ```
+
+To run the code in this repo either:
+
+- Run the `Application` class' main method
+- Run `mvn clean install spring-boot:repackage` and then run the jar created in the `target` directory
+- Run `mvn spring-boot:run`
