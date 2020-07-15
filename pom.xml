@@ -25,30 +25,10 @@
             <artifactId>spring-boot-starter-data-neo4j</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.neo4j</groupId>-->
-<!--            <artifactId>neo4j-ogm-bolt-driver</artifactId>-->
-<!--            <version>3.2.11</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-neo4j -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-neo4j</artifactId>-->
-<!--            <version>5.3.1.RELEASE</version>-->
-<!--        </dependency>-->
-
-        <!-- Modelmapper -->
-<!--        <dependency>-->
-<!--            <groupId>org.modelmapper</groupId>-->
-<!--            <artifactId>modelmapper</artifactId>-->
-<!--            <version>2.3.7</version>-->
-<!--        </dependency>-->
     </dependencies>
 
 
@@ -57,8 +37,20 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>spring-boot</classifier>
+                            <mainClass>
+                                dev.lankydan.neo4j.application.Application
+                            </mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>
